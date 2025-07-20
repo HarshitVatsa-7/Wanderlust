@@ -117,6 +117,12 @@
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     width: 100%;
+    scrollbar-width: none;         /* Firefox */
+    -ms-overflow-style: none;
+}
+
+.filter-scroll-wrapper::-webkit-scrollbar {
+  display: none;                 /* Chrome, Safari, Opera */
 }
 
 /* Enable horizontal scroll on smaller screens */

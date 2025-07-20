@@ -156,3 +156,49 @@ body {
     width: 100%;
     border-radius: 10px;
 }
+
+/* Search bar styling */
+.search-btn {
+  background-color: #fe424d;
+  color: white;
+  border-radius: 25px;
+  padding: 0 1rem;
+}
+.search-btn:hover {
+  background-color: #fe424d;
+  color: white;
+}
+.search-btn i {
+  margin-right: 0.5rem;
+}
+.search-inp {
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  min-width: 200px;
+  max-width: 400px;
+}
+
+/* Center search form in desktop view */
+.search-form {
+  flex-grow: 1;
+  max-width: 500px;
+}
+
+/* Ensure background is white in collapsed menu */
+#navbarNavAltMarkup {
+  background-color: white;
+  padding: 0.5rem 1rem;
+}
+
+/* Adjust spacing on small screens */
+@media (max-width: 768px) {
+  .search-inp {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+  .search-btn {
+    font-size: 0.9rem;
+    padding: 0 0.8rem;
+  }
+}
