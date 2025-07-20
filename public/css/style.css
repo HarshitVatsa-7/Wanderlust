@@ -79,7 +79,7 @@ body {
 }
 
 /* cards */
-.card {
+.listing-card {
     border: none !important;
     margin-bottom: 2rem;
 }
@@ -128,4 +128,31 @@ body {
 .show-card{
     padding-left: 0;
     padding-right: 0;
+}
+
+.star-rating label {
+    font-size: 2rem; /* increased from default */
+    color: #ccc; /* default color */
+    transition: color 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.star-rating {
+    gap: 0.3rem;
+    margin-bottom: 1rem;
+}
+
+.review-card {
+    padding: 1rem;
+}
+
+.review-card form {
+    padding-left: 0.5rem;
+}
+
+/* Map */
+#map {
+    height: 400px;
+    width: 100%;
+    border-radius: 10px;
 }

@@ -3,7 +3,7 @@
     <div class="col-8 offset-2 mb-5">
         <br><br>
     <h3>Create a new Listing</h3>
-    <form method="POST" action="/listings" class="needs-validation" novalidate>
+    <form method="POST" action="/listings" class="needs-validation" novalidate enctype="multipart/form-data">
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input
@@ -25,8 +25,25 @@
         </div>
 
         <div class="mb-3">
-            <label for="image" class="form-label">Image Link</label>
-            <input name="listing[image]" placeholder="enter image URL/LINK" type="text" class="form-control">
+                <label for="category" class="form-label">Category</label>
+                <select class="form-select" id="category" name="listing[category]" required>
+                    <option value="Trending">Trending</option>
+                    <option value="Rooms">Rooms</option>
+                    <option value="Iconic Cities">Iconic Cities</option>
+                    <option value="Mountains">Mountains</option>
+                    <option value="Castles">Castles</option>
+                    <option value="Amazing Pools">Amazing Pools</option>
+                    <option value="Camping">Camping</option>
+                    <option value="Farms">Farms</option>
+                    <option value="Arctics">Arctics</option>
+                    <option value="Temples">Temples</option>
+                    <option value="Beaches">Beaches</option>
+                </select>
+            </div>
+
+        <div class="mb-3">
+            <label for="image" class="form-label">Upload Listing Image</label>
+            <input name="listing[image]" type="file" class="form-control" required>
         </div>
     <div class="row">
         <div class="mb-3 col-4">
