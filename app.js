@@ -52,7 +52,7 @@ const isProduction = process.env.NODE_ENV === "production";
 const store = MongoStore.create({
     mongoUrl: dburl,
     crypto: { secret: process.env.SECRET },
-    touchAfter: 24 * 3600, // 24 hours
+    touchAfter: 24 * 3600,
 });
 store.on("error", (err) => console.log("Mongo Store Error:", err));
 
@@ -63,9 +63,9 @@ const sessionOptions = {
     saveUninitialized: false,
     cookie: {
         httpOnly: true,
-        secure: isProduction, // secure cookies only in production
-        sameSite: isProduction ? "none" : "lax", // required for Render in prod
-        maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+        secure: isProduction,
+        sameSite: isProduction ? "none" : "lax", 
+        maxAge: 7 * 24 * 60 * 60 * 1000,
     },
 };
 
