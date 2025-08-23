@@ -28,14 +28,21 @@ mongoose.connect(dburl)
     .then(() => console.log("Connected to MongoDB"))
     .catch(err => console.log("MongoDB connection error:", err));
 
+const isProduction = process.env.NODE_ENV === "production";
+
 // Force HTTPS in production
-if (process.env.NODE_ENV === "production") {
+if (isProduction) {
     app.use((req, res, next) => {
         if (req.headers["x-forwarded-proto"] !== "https") {
             return res.redirect("https://" + req.headers.host + req.url);
         }
         next();
     });
+}
+
+// **Trust proxy in production (needed for secure cookies behind Render proxy)**
+if (isProduction) {
+    app.set("trust proxy", 1);
 }
 
 // App configuration
@@ -47,8 +54,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "/public")));
 
-const isProduction = process.env.NODE_ENV === "production";
-
+// Session store
 const store = MongoStore.create({
     mongoUrl: dburl,
     crypto: { secret: process.env.SECRET },
@@ -63,9 +69,9 @@ const sessionOptions = {
     saveUninitialized: false,
     cookie: {
         httpOnly: true,
-        secure: isProduction,
-        sameSite: isProduction ? "none" : "lax", 
-        maxAge: 7 * 24 * 60 * 60 * 1000,
+        secure: isProduction,          // Only send cookie over HTTPS
+        sameSite: isProduction ? "none" : "lax", // Needed for cross-site in production
+        maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
     },
 };
 
@@ -109,4 +115,5 @@ app.use((err, req, res, next) => {
 // Start server
 const port = process.env.PORT || 8080;
 app.listen(port, () => console.log(`Server running on port ${port}`));
+
 
