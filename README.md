@@ -82,6 +82,12 @@ http://localhost:3000
 ## 📸 Screenshots
 ### 🏡 Home Page  
 ![Home Page](wanderlust_images/1.png)  
-
+### ✍️ Create Listing
+![Create Listing](wanderlust_images/2.png)
+### 🏨 Show Listing  
+![Show Listing](wanderlust_images/3.png)
+![Show Listing](wanderlust_images/4.png)
+### 🔐 Login Page  
+![Login Page](wanderlust_images/5.png)  
 ## 🔗 Links
 👉https://wanderlust-0duo.onrender.com/
