@@ -31,10 +31,47 @@ Others: connect-flash, express-session
 ## 📂 Project Structure
 ```
 Wanderlust/
-│-- models/          # Mongoose models (Listings, Users)
-│-- routes/          # Express routes
-│-- views/           # EJS templates
-│-- public/          # Static files (CSS, JS, Images)
-│-- app.js           # Main server file
-│-- package.json     # Dependencies & scripts
+│-- controllers/      # Controller logic for routes
+│-- init/             # Initialization files (DB, seed scripts, etc.)
+│-- models/           # Mongoose models (Listings, Users)
+│-- public/           # Static files (CSS, JS, Images)
+│-- routes/           # Express route handlers
+│-- utils/            # Utility functions/helpers
+│-- views/            # EJS templates (UI pages)
+
+│-- app.js            # Main server entry point
+│-- cloudConfig.js    # Cloudinary or cloud service configuration
+│-- middleware.js     # Custom middleware (auth checks, validation)
+│-- schema.js         # Joi validation schemas
+│-- package.json      # Dependencies & scripts
+│-- README.md         # Documentation
+│-- .gitignore        # Ignored files (node_modules, .env etc.)
+
 ```
+## ⚡ Installation & Setup
+1. **Clone the repository:**
+```
+git clone https://github.com/HarshitVatsa-7/Wanderlust.git
+cd Wanderlust
+```
+2. **Install dependencies:**
+```
+npm install
+```
+3. **Create a .env file in the root and add your variables:**
+```
+MONGO_URI=your_mongodb_connection_string
+SESSION_SECRET=your_secret_key
+CLOUD_NAME=your_cloudinary_name
+CLOUD_API_KEY=your_cloudinary_api_key
+CLOUD_API_SECRET=your_cloudinary_secret
+```
+4. **Run the server:**
+```
+npm start
+```
+5. **Visit in browser:**
+```
+http://localhost:3000
+```
+   
