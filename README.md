@@ -80,6 +80,8 @@ npm start
 http://localhost:3000
 ```
 ## 📸 Screenshots
+### 🏡 Home Page  
+![Home Page](wanderlust_images/1.png)  
 
 ## 🔗 Links
 👉https://wanderlust-0duo.onrender.com/
