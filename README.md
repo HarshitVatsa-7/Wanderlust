@@ -22,10 +22,15 @@ It allows users to explore, create, and manage property listings, authenticate s
 ## 🛠️ Tech Stack
 
 Frontend: HTML, CSS, Bootstrap, EJS
+
 Backend: Node.js, Express.js
+
 Database: MongoDB (via Mongoose)
+
 Authentication: Passport.js (Local Strategy)
+
 Templating: EJS
+
 Others: connect-flash, express-session
 
 ## 📂 Project Structure
